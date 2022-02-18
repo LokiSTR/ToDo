@@ -13,4 +13,5 @@ public class IndexController {
         model.addAttribute("activePage", activePage);
         return "index.html";
     }
+    
 }
