@@ -4,6 +4,9 @@
     <a class="btn btn-secondary mt-2" th:text="${todo}" th:href="@{/deltodo(id=${todoStat.index})}"></a>
 </span>
 <hr>
+
+
+<!-- action -->
 <form th:action="@{/addtodo}">
     <div class="input-group mb-3">
         <input type="text" class="form-control" placeholder="Neue ToDo" th:name="todoDesc">

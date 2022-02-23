@@ -7,6 +7,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             
+            <!-- HomePage -->
             <li th:if="${activePage == 'home'}" class="nav-item active">
                 <a class="nav-link" th:href="@{/?activePage=home}">Home</a>
             </li>
@@ -14,7 +15,7 @@
                 <a class="nav-link" th:href="@{/?activePage=home}">Home</a>
             </li>
 
-
+            <!-- ToDos -->
             <li th:if="${activePage == 'todos'}" class="nav-item active">
                 <a class="nav-link" th:href="@{/todos}">ToDos</a>
             </li>
@@ -22,16 +23,21 @@
                 <a class="nav-link" th:href="@{/todos}">ToDos</a>
             </li>
 
+            <!-- Cards -->
+            <li th:if="${activePage == 'cards'}" class="nav-item active">
+                <a class="nav-link" th:href="@{/cards}">Cards</a>
+            </li>
+            <li th:unless="${activePage == 'cards'}" class="nav-item">
+                <a class="nav-link" th:href="@{/cards}">Cards</a>
+            </li>
 
-
+            <!-- Impressum -->
             <li th:if="${activePage == 'impressum'}" class="nav-item active">
                 <a class="nav-link" th:href="@{/?activePage=impressum}">Impressum</a>
             </li>
             <li th:unless="${activePage == 'impressum'}" class="nav-item">
                 <a class="nav-link" th:href="@{/?activePage=impressum}">Impressum</a>
             </li>
-
-
         </ul>
         </div>
     </nav>

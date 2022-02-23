@@ -1,0 +1,68 @@
+<!-- Versuchen sogenannte Cards einzubauen, zu finden https://getbootstrap.com/docs/5.1/examples/pricing/
+mit neuem controller etc einbauen. 6 Karten soll man machen, in Todos schon gemacht mit span
+am besten noch in ein grid. dynamisch erzeugen lassen -->
+
+ <!-- beispiel einer card -->
+
+<h2 th:text="'Deine Cards (' + ${#arrays.length(cards)} + ')'"></h2>
+
+<!-- macht die button selber -->
+<hr>
+<span th:each="card, cardStat: ${cards}">
+    <a class="btn btn-secondary mt-2" th:text="${card}" th:href="@{/delcard(id=${cardStat.index})}"></a>
+</span>
+<hr>
+
+
+<div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Essen</h5>
+      <p class="card-text">Man sollte morgens, mittags und abends essen. 32 mal kauen!</p>
+      <a href="@{/delcard(id=${cardStat.index})}" class="btn btn-secondary mt-2" th:text="Fertig"></a>
+    </div>
+</div>
+
+
+<div class="row">
+
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text">Es muss gesaugt werden und das Bad muss gewischt werden</p>
+          <a href="@{/delcard(id=${cardStat.index})}" class="btn btn-primary">Fertig</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Zuhause</h5>
+            <p class="card-text">Es muss gesaugt werden und das Bad muss gewischt werden</p>
+            <a href="@{/delcard(id=${cardStat.index})}" class="btn btn-primary">Fertig</a>
+          </div>
+        </div>
+    </div>
+      
+    <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Zuhause</h5>
+            <p class="card-text">Es muss gesaugt werden und das Bad muss gewischt werden</p>
+            <a href="@{/delcard(id=${cardStat.index})}" class="btn btn-primary">Fertig</a>
+          </div>
+        </div>
+    </div>  
+</div>
